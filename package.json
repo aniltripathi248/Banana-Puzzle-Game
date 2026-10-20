@@ -1,0 +1,11 @@
+{
+  "name": "banana-puzzle-game",
+  "version": "1.0.0",
+  "description": "Banana Puzzle Game full stack application",
+  "scripts": {
+    "start": "start.bat",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start"
+  }
+}
+
