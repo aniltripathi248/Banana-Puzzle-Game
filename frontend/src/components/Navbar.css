@@ -1,0 +1,113 @@
+/* Navbar.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 14, 23, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 214, 0, 0.15);
+  padding: 0 2rem;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  font-size: 1.75rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.navbar-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  background: rgba(255, 214, 0, 0.1);
+}
+
+/* User area */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navbar-score {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 214, 0, 0.1);
+  border: 1px solid rgba(255, 214, 0, 0.2);
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+}
+
+.score-icon { font-size: 0.9rem; }
+.score-value { 
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.navbar-username {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 1rem; }
+  .navbar-title { display: none; }
+  .navbar-username { display: none; }
+  .nav-link { padding: 0.5rem 0.6rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .navbar-score { display: none; }
+}
