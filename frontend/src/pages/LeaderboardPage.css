@@ -1,0 +1,222 @@
+/* LeaderboardPage.css */
+
+.leaderboard-page {
+  min-height: calc(100vh - 64px);
+  padding: 2rem 1rem;
+}
+
+.leaderboard-container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leaderboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Header ── */
+.leaderboard-header {
+  text-align: center;
+}
+
+.leaderboard-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.leaderboard-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-rank-badge {
+  display: inline-block;
+  background: rgba(255, 214, 0, 0.1);
+  border: 1px solid rgba(255, 214, 0, 0.3);
+  color: var(--color-primary);
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ── No Data ── */
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Leaderboard List ── */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.leaderboard-row:hover {
+  border-color: rgba(255, 214, 0, 0.25);
+  transform: translateX(4px);
+}
+
+/* Current user highlight */
+.leaderboard-row.is-current-user {
+  border-color: rgba(255, 214, 0, 0.5);
+  background: rgba(255, 214, 0, 0.05);
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.1);
+}
+
+/* Top 3 special styling */
+.leaderboard-row.top-1 { border-color: rgba(255, 214, 0, 0.5); }
+.leaderboard-row.top-2 { border-color: rgba(192, 192, 192, 0.4); }
+.leaderboard-row.top-3 { border-color: rgba(205, 127, 50, 0.4); }
+
+/* ── Rank column ── */
+.lb-rank {
+  font-size: 1.5rem;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ── Avatar ── */
+.lb-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: #0f0e17;
+}
+
+.lb-avatar.rank-1 {
+  background: linear-gradient(135deg, #ffd600, #ff8c00);
+  box-shadow: 0 0 15px rgba(255, 214, 0, 0.4);
+}
+
+.lb-avatar.rank-2 {
+  background: linear-gradient(135deg, #c0c0c0, #808080);
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+}
+
+.lb-avatar.rank-3 {
+  background: linear-gradient(135deg, #cd7f32, #8b4513);
+  box-shadow: 0 0 15px rgba(205, 127, 50, 0.3);
+}
+
+.lb-avatar.rank-other {
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+
+/* ── User info ── */
+.lb-user {
+  flex: 1;
+  min-width: 0;
+}
+
+.lb-username {
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.you-badge {
+  background: rgba(255, 214, 0, 0.15);
+  color: var(--color-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 214, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lb-stats-small {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ── Accuracy column ── */
+.lb-accuracy {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lb-accuracy-value {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-success);
+}
+
+.lb-accuracy-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* ── Score column ── */
+.lb-score {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.lb-score-value {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.lb-score-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* ── Note ── */
+.leaderboard-note {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .lb-accuracy { display: none; }
+  .lb-stats-small { display: none; }
+}
