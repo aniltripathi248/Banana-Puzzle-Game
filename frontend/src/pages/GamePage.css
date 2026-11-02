@@ -1,0 +1,232 @@
+/* GamePage.css — Styles for the main puzzle game */
+
+.game-page {
+  min-height: calc(100vh - 64px);
+  padding: 2rem 1rem;
+}
+
+.game-container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  border-color: rgba(255, 214, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+/* ── Puzzle Card ── */
+.puzzle-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.puzzle-header {
+  text-align: center;
+}
+
+.puzzle-title {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.puzzle-instruction {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Puzzle Image ── */
+.puzzle-image-wrapper {
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.puzzle-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: var(--radius-md);
+  transition: opacity 0.4s ease;
+}
+
+.puzzle-image.visible { opacity: 1; }
+.puzzle-image.hidden { opacity: 0; position: absolute; }
+
+.puzzle-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Answer Form ── */
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.answer-input-wrapper {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.answer-input {
+  flex: 1;
+  padding: 0.875rem 1.125rem;
+  background: var(--color-surface-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition);
+  outline: none;
+  /* Remove number input arrows */
+  -moz-appearance: textfield;
+}
+
+.answer-input::-webkit-outer-spin-button,
+.answer-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.answer-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 214, 0, 0.15);
+}
+
+.answer-input::placeholder {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ── Feedback Box ── */
+.feedback-box {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.feedback-correct {
+  background: rgba(74, 222, 128, 0.12);
+  border: 2px solid rgba(74, 222, 128, 0.4);
+}
+
+.feedback-wrong {
+  background: rgba(248, 113, 113, 0.12);
+  border: 2px solid rgba(248, 113, 113, 0.4);
+}
+
+.feedback-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.feedback-correct .feedback-message { color: var(--color-success); }
+.feedback-wrong .feedback-message { color: var(--color-error); }
+
+.feedback-points {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* ── Next Puzzle Button ── */
+.next-puzzle-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── How to Play ── */
+.how-to-play h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.how-to-play ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.how-to-play li {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .answer-input-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
