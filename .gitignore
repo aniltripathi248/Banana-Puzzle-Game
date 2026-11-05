@@ -5,6 +5,7 @@ backend/node_modules/
 
 # Environment variables — NEVER commit these
 backend/.env
+backend/data/
 
 # Build output
 frontend/build/
